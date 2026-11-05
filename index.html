@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HistoriA · 历史推理局</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain"></div>
+<header class="topbar">
+ <div class="brand"><div class="seal">H</div><div><div class="brand-name">HistoriA <span>· 历史推理局</span></div><div class="brand-sub">HISTORICAL INQUIRY ARCHIVE</div></div></div>
+ <div class="top-meta"><span class="live-dot"></span> 调查档案已载入 <span class="meta-divider">|</span> CASE NO. 001</div>
+</header>
+<main>
+ <section class="hero">
+  <div class="eyebrow">CASE FILE 001 <span>·</span> THE INDUSTRIAL REVOLUTION</div>
+  <h1>蒸汽时代的起点</h1>
+  <p class="hero-question">为什么工业革命首先发生在英国？</p>
+  <div class="hero-bottom"><span>调查范围：约1700—1850年</span><span>史料库：8份档案 / 研究资料</span><span>调查模式：自由探索</span></div>
+ </section>
+ <nav class="tabs" aria-label="调查步骤">
+  <button class="tab active" data-tab="brief"><b>01</b> 案件档案</button>
+  <button class="tab" data-tab="archive"><b>02</b> 历史档案室 <i id="evidenceCount">0</i></button>
+  <button class="tab" data-tab="workbench"><b>03</b> 推理工作台</button>
+  <button class="tab" data-tab="report"><b>04</b> 结案报告</button>
+ </nav>
+ <section id="brief" class="panel active">
+  <div class="section-head"><div><div class="eyebrow">THE CASE</div><h2>一场改变世界的变革，从哪里开始？</h2></div><span class="stamp">待调查</span></div>
+  <div class="brief-grid">
+   <article class="paper">
+    <h3>案件背景</h3>
+    <p>18世纪中后期，英国的棉纺织、采矿、冶铁和交通运输等领域出现了一系列变化。新的机器逐渐应用于生产，工厂制度不断发展，社会经济结构也随之改变。</p>
+    <p>但历史学家并不只是在寻找“第一台机器”或某一个发明者。市场需求、能源条件、劳动力、资本、制度环境和技术创新之间，可能存在复杂的联系。</p>
+    <div class="note"><strong>调查提醒</strong> 不要急着套用“市场、资本、劳动力、技术”这类现成答案。你需要判断：哪些材料能支持你的解释？材料之间是否存在矛盾？</div>
+   </article>
+   <aside class="case-side">
+    <div class="side-label">YOUR MISSION</div><h3>提交一份历史解释</h3>
+    <ol><li>自由查阅档案，记录关键信息</li><li>选择证据，说明它支持什么观点</li><li>比较不同解释，回应可能的反证</li><li>形成有证据支撑的结案报告</li></ol>
+    <button class="primary" data-goto="archive">进入历史档案室 <span>↗</span></button>
+   </aside>
+  </div>
+  <div class="three-cues"><div><span>调查问题 01</span><b>英国具备了哪些有利条件？</b></div><div><span>调查问题 02</span><b>这些条件如何相互作用？</b></div><div><span>调查问题 03</span><b>有没有证据会修正你的解释？</b></div></div>
+ </section>
+ <section id="archive" class="panel">
+  <div class="section-head"><div><div class="eyebrow">THE ARCHIVE</div><h2>历史档案室</h2><p class="muted">自由探索。点击任意档案查看详情，并将有用材料加入证据板。</p></div><span class="archive-count">08 <small>ITEMS</small></span></div>
+  <div class="archive-tools">
+   <input id="search" type="search" placeholder="搜索档案名称、内容或关键词…">
+   <select id="category"><option value="">全部主题</option><option>技术与创新</option><option>劳动与社会后果</option><option>制度与国家治理</option><option>劳动力与经济结构</option><option>农业与土地制度</option><option>市场、产业与区域</option><option>市场、贸易与帝国</option></select>
+   <select id="kind"><option value="">全部材料类型</option><option value="原始史料">原始史料</option><option value="二手研究">二手研究</option><option value="档案检索指南">档案检索指南</option><option value="博物馆藏品">博物馆藏品</option></select>
+  </div>
+  <div class="archive-layout">
+   <div id="sourceGrid" class="source-grid"></div>
+   <aside class="evidence-board"><div class="board-head"><div><div class="eyebrow">EVIDENCE BOARD</div><h3>我的证据板</h3></div><span id="boardNum">0</span></div><div id="boardItems" class="board-items"><p class="empty">尚未收藏史料。<br>打开档案，选择“加入证据板”。</p></div><button class="secondary full" data-goto="workbench">前往推理工作台 →</button></aside>
+  </div>
+  <div id="sourceDetail" class="modal hidden"><div class="modal-backdrop" data-close></div><article class="detail-card"><button class="close" data-close>×</button><div id="detailContent"></div></article></div>
+ </section>
+ <section id="workbench" class="panel">
+  <div class="section-head"><div><div class="eyebrow">THE WORKBENCH</div><h2>推理工作台</h2><p class="muted">把史料信息转化为观点、证据和解释。你的假设可以随调查推进而修改。</p></div></div>
+  <div class="work-grid">
+   <div class="work-main">
+    <div class="work-card"><label>STEP 01 / INITIAL HYPOTHESIS</label><h3>你目前的初步判断是什么？</h3><textarea id="hypothesis" placeholder="例如：我认为英国较早发生工业革命，可能与……有关。"></textarea><small>先写下当前想法，不需要一开始就完整。</small></div>
+    <div class="work-card"><label>STEP 02 / EVIDENCE & REASONING</label><h3>证据如何支持你的判断？</h3><div id="workEvidence" class="work-evidence"><p class="empty">请先从档案室选择史料。</p></div><textarea id="reasoning" placeholder="这份史料呈现了……，它可以支持……这一判断，因为……"></textarea></div>
+    <div class="work-card"><label>STEP 03 / COUNTER-ARGUMENT</label><h3>有没有证据让你需要修正原来的判断？</h3><textarea id="counter" placeholder="另一种可能的解释是……；目前材料还不能说明……"></textarea></div>
+   </div>
+   <aside class="ai-panel"><div class="ai-head"><span class="ai-orb">✳</span><div><b>调查助手</b><small>HISTORIA ASSISTANT · 演示模式</small></div></div><p class="ai-disclaimer">当前为本地交互演示，反馈由页面规则生成，尚未连接真实AI模型。</p><div id="chat" class="chat"><div class="bubble bot">你好，调查员。你可以先写下自己的假设，或把一份史料加入证据板。我会帮助你检查：证据是否支持观点、推理是否跳步，以及材料有哪些局限。</div></div><div class="ai-actions"><button class="secondary" id="askEvidence">检查我的证据</button><button class="secondary" id="askCounter">寻找推理漏洞</button><button class="secondary" id="askNext">给我一个调查提示</button></div></aside>
+  </div>
+ </section>
+ <section id="report" class="panel">
+  <div class="section-head"><div><div class="eyebrow">THE FINAL REPORT</div><h2>结案报告</h2><p class="muted">提交一份有证据、有解释，也能说明材料局限的历史判断。</p></div><span class="stamp">FINAL REVIEW</span></div>
+  <div class="report-paper">
+   <div class="report-title">CASE 001 / INVESTIGATION REPORT</div>
+   <label>一、核心判断</label><textarea id="finalClaim" placeholder="我认为工业革命首先发生在英国，主要是因为……"></textarea>
+   <label>二、关键证据及其作用</label><textarea id="finalEvidence" placeholder="史料A……说明……；史料B……进一步表明……"></textarea>
+   <label>三、因果关系与历史解释</label><textarea id="finalReason" placeholder="这些条件并非彼此孤立，而是通过……相互作用，最终……"></textarea>
+   <label>四、反证、局限与仍待回答的问题</label><textarea id="finalLimit" placeholder="现有材料还不能证明……；另一种解释可能是……"></textarea>
+   <div class="report-actions"><button class="secondary" id="fillFromWorkbench">从工作台带入内容</button><button class="primary" id="exportReport">导出结案报告 .txt ↗</button></div>
+   <div id="review" class="review hidden"></div>
+  </div>
+ </section>
+</main>
+<footer><span>HistoriA · 历史推理局</span><span>学习原型 / CASE 001 / 本地演示版</span></footer>
+<script src="app.js"></script>
+</body></html>
